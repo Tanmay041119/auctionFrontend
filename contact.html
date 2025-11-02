@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact | Battle of Bytes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- ✅ Favicon -->
+    <link rel="icon" type="image/jpeg/png" href="images/favicon.JPG">
+</head>
+
+<body class="min-h-screen bg-[#0b1120] text-white font-sans">
+
+  <!-- 🧭 Navbar (injected dynamically by script.js) -->
+  <div class="navbar"></div>
+
+  <!-- 📬 Contact Form Section -->
+  <main class="pt-28 max-w-3xl mx-auto px-4">
+    <section class="bg-[#111827]/70 backdrop-blur-sm border border-cyan-400/20 rounded-2xl shadow-lg p-8">
+      <h1 class="text-3xl font-bold text-cyan-400 mb-3 text-center">Get in Touch</h1>
+      <p class="text-gray-400 text-center mb-8">
+        Have any queries, feedback, or collaboration ideas?  
+        We’d love to hear from you!
+      </p>
+
+      <form id="enquiryForm" class="grid gap-5">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input 
+            name="name" 
+            placeholder="Your Name" 
+            required 
+            class="input-box bg-white/10 border border-cyan-400/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400 placeholder-gray-400"
+          />
+          <input 
+            name="email" 
+            type="email" 
+            placeholder="Email" 
+            required 
+            class="input-box bg-white/10 border border-cyan-400/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400 placeholder-gray-400"
+          />
+        </div>
+
+        <textarea 
+          name="message" 
+          rows="6" 
+          placeholder="Write your message..." 
+          required
+          class="input-box bg-white/10 border border-cyan-400/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400 placeholder-gray-400"
+        ></textarea>
+
+        <div class="flex flex-wrap justify-center gap-3">
+          <button 
+            type="submit" 
+            class="px-6 py-2 bg-gradient-to-r from-cyan-400 to-violet-600 text-black font-semibold rounded-lg hover:scale-105 transition-transform"
+          >
+            Send Message
+          </button>
+          <button 
+            type="reset" 
+            class="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition"
+          >
+            Reset
+          </button>
+        </div>
+
+        <div id="formStatus" class="text-center text-sm text-gray-400 mt-3"></div>
+      </form>
+    </section>
+  </main>
+
+  <!-- 🌙 Footer -->
+  <footer class="py-8 text-center text-sm text-gray-500 border-t border-white/10 mt-12">
+    © 2025 Battle of Bytes | Contact Page
+  </footer>
+
+  <!-- ✅ Navbar Script (must be included in every page) -->
+  <script src="script.js"></script>
+
+  <!-- 📨 Form Behavior -->
+  <script>
+    document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending...';
+      setTimeout(() => {
+        status.textContent = '✅ Message sent successfully ';
+      }, 900);
+    });
+  </script>
+
+</body>
+</html>

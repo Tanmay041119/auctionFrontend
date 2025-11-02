@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Live Poll | Battle of Bytes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- ✅ Favicon -->
+    <link rel="icon" type="image/jpeg/png" href="images/favicon.JPG">
+</head>
+
+<body class="min-h-screen text-white bg-gradient-to-b from-[#05060a] to-[#0b1120] font-sans">
+
+  <!-- 🧭 Navbar (Dynamic) -->
+  <div class="navbar"></div>
+
+  <!-- ⚡ Poll Section -->
+  <main class="pt-28 max-w-4xl mx-auto px-4">
+    <section class="bg-[#111827]/70 border border-cyan-400/20 rounded-2xl shadow-lg p-8 backdrop-blur-sm">
+      <h1 class="text-3xl font-bold text-cyan-400 mb-3 text-center">⚡ Live Team Poll</h1>
+      <p class="text-gray-400 text-center mb-8 text-sm">
+        Vote for your favourite team — one vote per login every 24 hrs. Poll resets periodically.
+      </p>
+
+      <div id="pollArea" class="mt-6"></div>
+      <div id="voteTimer" class="mt-6 text-center text-sm text-gray-400"></div>
+    </section>
+  </main>
+
+  <!-- 🌙 Footer -->
+  <footer class="py-8 text-center text-sm text-gray-500 border-t border-white/10 mt-12">
+    © 2025 Battle of Bytes — Live Poll
+  </footer>
+
+  <!-- ✅ Load Navbar Script -->
+  <script src="script.js"></script>
+
+  <!-- 🗳️ Poll Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', initPoll);
+
+    function initPoll() {
+      const teams = [
+        "Byte Busters", "Ruby Renegades", "Python Pioneers", "Java Jesters",
+        "Code Commanders", "Syntax Samurai", "Data Mavericks", "Quantum Coders", "Logic Luminaries"
+      ];
+      const area = document.getElementById('pollArea');
+      const timerDisplay = document.getElementById('voteTimer');
+      const resetTime = 86400000;// 60s
+      let votes = JSON.parse(localStorage.getItem('votes')) || { total: 0, data: {} };
+      const now = Date.now();
+
+      if (!localStorage.getItem("lastReset") || now - localStorage.getItem("lastReset") > resetTime) {
+        votes = { total: 0, data: {} };
+        localStorage.setItem('votes', JSON.stringify(votes));
+        localStorage.setItem('lastReset', now);
+      }
+
+      teams.forEach(t => { if (!votes.data[t]) votes.data[t] = 0; });
+
+      function render() {
+        const sorted = Object.entries(votes.data).sort((a, b) => b[1] - a[1]);
+        area.innerHTML = '';
+
+        sorted.forEach(([team, count]) => {
+          const pct = votes.total ? Math.round((count / votes.total) * 100) : 0;
+          area.innerHTML += `
+            <div class="mb-5">
+              <div class="flex justify-between text-sm font-semibold mb-1">
+                <span>${team}</span><span>${count} votes (${pct}%)</span>
+              </div>
+              <div class="w-full bg-white/10 h-3 rounded-full">
+                <div style="width:${pct}%" class="h-3 rounded-full bg-gradient-to-r from-cyan-400 to-violet-600"></div>
+              </div>
+            </div>`;
+        });
+
+        // --- Controls ---
+        const controls = document.createElement('div');
+        controls.className = 'mt-6 flex flex-col sm:flex-row items-center justify-center gap-3';
+
+        const sel = document.createElement('select');
+        sel.className = 'bg-[#0b1120] border border-cyan-400/30 text-cyan-300 rounded-lg px-4 py-2 w-60 focus:outline-none focus:border-cyan-400';
+        teams.forEach(t => {
+          const o = document.createElement('option');
+          o.value = t;
+          o.textContent = t;
+          sel.appendChild(o);
+        });
+
+        const btn = document.createElement('button');
+        btn.className = 'px-6 py-2 bg-gradient-to-r from-cyan-400 to-violet-600 text-black font-semibold rounded-lg hover:scale-105 transition-transform';
+        btn.textContent = 'Vote';
+
+        btn.onclick = () => {
+          const lastVote = parseInt(localStorage.getItem('lastVoteTime')) || 0;
+          const diff = Date.now() - lastVote;
+          if (diff < resetTime) {
+            alert(`Please wait ${Math.ceil((resetTime - diff) / 1000)}s before voting again.`);
+            return;
+          }
+          const selVal = sel.value;
+          votes.data[selVal]++;
+          votes.total++;
+          localStorage.setItem('votes', JSON.stringify(votes));
+          localStorage.setItem('lastVoteTime', Date.now());
+          render();
+        };
+
+        controls.appendChild(sel);
+        controls.appendChild(btn);
+        area.appendChild(controls);
+      }
+
+      function updateVoteTimer() {
+        const last = parseInt(localStorage.getItem('lastVoteTime')) || 0;
+        const diff = Date.now() - last;
+        const rem = resetTime - diff;
+        if (rem > 0) {
+          timerDisplay.textContent = `🕒 You can vote again in ${Math.ceil(rem / 1000)}s`;
+          setTimeout(updateVoteTimer, 1000);
+        } else {
+          timerDisplay.textContent = '✅ You can vote now!';
+        }
+      }
+
+      render();
+      updateVoteTimer();
+    }
+  </script>
+
+</body>
+</html>

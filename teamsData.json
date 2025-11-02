@@ -1,0 +1,155 @@
+[
+  {
+    "team": "Java Jesters",
+    "mentor": "Santosh Kumar Sharma",
+    "players": [
+      {"name": "Anvesha Mittal", "branch": "BTECH CSE 5th Sem", "roll": "BTECH/25024/23"},
+      {"name": "Manisha Parwani", "branch": "BTECH CSE 5th Sem", "roll": "BTECH/25063/23"},
+      {"name": "Devesh Sharma", "branch": "BTECH CSE 3rd Sem", "roll": "BTECH/25022/24"},
+      {"name": "Nischal Agarwal", "branch": "BTECH ECE 3rd Sem", "roll": "BTECH/25041/24"},
+      {"name": "Yashika Sharma", "branch": "MSc AI & DS 1st Sem", "roll": "MSCAI/25002/25"},
+      {"name": "Sagar Kumar Jha", "branch": "MCA 4th Sem", "roll": "MCA/25011/24"},
+      {"name": "Dev", "branch": "BTECH CSE 3rd Sem", "roll": "BTECH/25021/24"},
+      {"name": "Abhijeet Anand", "branch": "BTECH CSE 7th Sem", "roll": "BTECH/25080/22"},
+      {"name": "Vedanshi Goyal", "branch": "BTECH CSE 5th Sem", "roll": "BTECH/25167/23"},
+      {"name": "Akshit Srivastava", "branch": "BTECH CSE 5th Sem", "roll": "BTECH/25016/23"},
+      {"name": "Ronak Mathur", "branch": "BTECH CSE 3rd Sem", "roll": "BTECH/25055/24"}
+    ]
+  },
+  {
+    "team": "Code Commanders",
+    "mentor": "Mr. Puneet Sharma",
+    "players": [
+      {"name": "Nainav Pancholi", "branch": "7th CSE", "roll": "BTECH/25030/22"},
+      {"name": "Tanmay Khandelwal", "branch": "7th CSE", "roll": "BTECH/25019/22"},
+      {"name": "Anoushka Prakash", "branch": "7th CSE", "roll": "BTECH/25015/22"},
+      {"name": "Mridul Krishna Sharma", "branch": "5th CSE", "roll": "BTECH/25073/23"},
+      {"name": "Charchit Jain", "branch": "5th CSE", "roll": "BTECH/25158/23"},
+      {"name": "Pratibha Soni", "branch": "5th CSE", "roll": "BTECH/25091/23"},
+      {"name": "Subrath Modi Jain", "branch": "5th CSE", "roll": "BTECH/25127/23"},
+      {"name": "Hardik Gupta", "branch": "3rd CSE", "roll": "BTECH/25117/24"},
+      {"name": "Anshul Verma", "branch": "3rd CSE", "roll": "BTECH/25146/24"},
+      {"name": "Anish Agrawal", "branch": "3rd CSE", "roll": "BTECH/25176/24"},
+      {"name": "Manan Soni", "branch": "3rd CSE", "roll": "BTECH/25037/24"}
+    ]
+  },
+  {
+    "team": "Syntax Samurai",
+    "mentor": "Vivek Gaur",
+    "players": [
+      {"name": "Kushagra Jain", "branch": "CSE 7 Sem", "roll": "BTECH/25054/22"},
+      {"name": "Maulik Agarwal", "branch": "CSE 7 Sem", "roll": "BTECH/25036/22"},
+      {"name": "Dharna Gunidia", "branch": "CSE 7 Sem", "roll": "BTECH/25028/22"},
+      {"name": "Yashank Gupta", "branch": "CSE 3 sem", "roll": "BTECH/25072/24"},
+      {"name": "Dhruvika Khandelwal", "branch": "CSE 5 sem", "roll": "BTECH/25037/23"},
+      {"name": "Vaibhav", "branch": "CSE 3 sem", "roll": "BTECH/25067/24"},
+      {"name": "Navya Khandelwal", "branch": "CSE 5 sem", "roll": "BTECH/25077/23"},
+      {"name": "Anjali Banwani", "branch": "AI 5 sem", "roll": "BTECH/25021/23"},
+      {"name": "Shivin Agrawal", "branch": "CSE 3 sem", "roll": "BTECH/25061/24"},
+      {"name": "Arjun Rawat", "branch": "CSE 3 sem", "roll": "BTECH/25017/24"},
+      {"name": "Vansh Jain", "branch": "CSE 5 sem", "roll": "BTECH/25135/23"}
+    ]
+  },
+  {
+    "team": "Quantum Coders",
+    "mentor": "Pankaj Gupta",
+    "players": [
+      {"name": "Aditya Goyal", "branch": "CSE 5th Semester", "roll": "BTECH/25153/23"},
+      {"name": "Rishit Murarka", "branch": "CSE 5th Semester", "roll": "BTECH/25100/23"},
+      {"name": "Shirish Pareek", "branch": "MCA 1st Semester", "roll": "MCA/25014/25"},
+      {"name": "Sanchit Pawa", "branch": "CSE 5th Semester", "roll": "BTECH/25105/23"},
+      {"name": "Rishit Tandon", "branch": "CSE 3rd Semester", "roll": "BTECH/25130/24"},
+      {"name": "Shaikh Fahad", "branch": "CSE 3rd Semester", "roll": "BTECH/25218/24"},
+      {"name": "Sarthak Goyal", "branch": "AI 3rd Semester", "roll": "BTECH/25095/24"},
+      {"name": "Gourav Mittal", "branch": "CSE 7th Semester", "roll": "BTECH/25040/22"},
+      {"name": "Sara Nahata", "branch": "CSE 5th Semester", "roll": "BTECH/25108/23"},
+      {"name": "Aditya Gupta", "branch": "CSE 3rd Semester", "roll": "BTECH/25145/24"},
+      {"name": "Khushi Shrivastava", "branch": "CSE 7th Semester", "roll": "BTECH/25061/22"}
+    ]
+  },
+  {
+    "team": "Ruby Renegades",
+    "mentor": "Santosh Agarwal Sir",
+    "players": [
+      {"name": "Anuj Sharma", "branch": "MCA 1 Sem", "roll": "MCA/25022/25"},
+      {"name": "Devesh jain", "branch": "BCA 3 Sem", "roll": "BCA/25004/24"},
+      {"name": "Disha Kodasia", "branch": "BCA 3 Sem", "roll": "BCA/25006/24"},
+      {"name": "Mehul Sharma", "branch": "BTech 5 sem", "roll": "BTECH/25069/23"},
+      {"name": "Srijan Kumar", "branch": "BCA 3 Sem", "roll": "BCA/25021/24"},
+      {"name": "Abhinav Gupta", "branch": "BTECH 5 Sem", "roll": "BTECH/25006/23"},
+      {"name": "Nehal Singh", "branch": "MCA 1 Sem", "roll": "MCA/25010/25"},
+      {"name": "Anisha Agarwal", "branch": "BTECH 5 Sem", "roll": "BTECH/25020/23"},
+      {"name": "Aastha Jain", "branch": "BTECH 5 Sem", "roll": "BTECH/25004/23"},
+      {"name": "Yadvesh Haritashya", "branch": "BTECH 3 Sem", "roll": "BTECH/25101/24"},
+      {"name": "Aditya", "branch": "MCA 1 Sem", "roll": "MCA/25003/25"}
+    ]
+  },
+  {
+    "team": "Data Mavericks",
+    "mentor": "Biplendu Pathak",
+    "players": [
+      {"name": "Charul Chaudhary", "branch": "Cse 7", "roll": "BTECH/25047/22"},
+      {"name": "Shreya Agrawal", "branch": "CSE 7th sem", "roll": "BTECH/25043/22"},
+      {"name": "Chirag Soni", "branch": "MCA 3rd Sem", "roll": "MCA/25009/25"},
+      {"name": "Utkarsh Pareek", "branch": "CSE 5th", "roll": "BTECH/25132/23"},
+      {"name": "Sagar Agarwal", "branch": "Cse 5", "roll": "BTECH/25101/23"},
+      {"name": "Arpit Benjamin", "branch": "CSE 5th", "roll": "BTECH/25157/23"},
+      {"name": "Shantnu Saxena", "branch": "CSE 5th", "roll": "BTECH/25113/23"},
+      {"name": "Anvita Khandelwal", "branch": "CSE 3rd", "roll": "BTECH/25013/24"},
+      {"name": "Harshit Kushwaha", "branch": "CSE 3rd", "roll": "BTECH/25178/24"},
+      {"name": "Samridhi Arora", "branch": "CSE 3rd", "roll": "BTECH/25057/24"},
+      {"name": "Khushal Sharma", "branch": "cse 3th sem", "roll": "BTECH/25032/24"}
+    ]
+  },
+  {
+    "team": "Logic Luminaries",
+    "mentor": "Dr. Vishwambhar Pathak",
+    "players": [
+      {"name": "Hemang Bhabhra", "branch": "Cse/7th sem", "roll": "BTECH/25027/22"},
+      {"name": "Khushi Khandelwal", "branch": "Cse/7th sem", "roll": "BTech/25033/22"},
+      {"name": "Ankita puskar", "branch": "MCA /sem 3", "roll": "MCA/25018/24"},
+      {"name": "Karishma Jethwani", "branch": "Cse/5th sem", "roll": "BTECH/25054/23"},
+      {"name": "Kritarth Awasthi", "branch": "CSE/5th SEM", "roll": "BTECH/25201/23"},
+      {"name": "Somesh Goyal", "branch": "Cse/5th sem", "roll": "BTECH/25123/23"},
+      {"name": "Ansh Raj", "branch": "cse/3 sem", "roll": "BTECH/25079/24"},
+      {"name": "Prithika Pallavi", "branch": "AI /3 sem", "roll": "BTech/25196/24"},
+      {"name": "Arnav Singh", "branch": "AI/3 sem", "roll": "BTECH/25080/24"},
+      {"name": "Yashvardhan Thanvi", "branch": "bca/3 sem", "roll": "BCA/25024/24"},
+      {"name": "Manan Lalwani", "branch": "cse/5 sem", "roll": "BTECH/25061/23"}
+    ]
+  },
+  {
+    "team": "Byte Busters",
+    "mentor": "Ms. Anju Sharma",
+    "players": [
+      {"name": "Saksham Agarwal", "branch": "MCA/3rd Sem", "roll": "MCA/25004/24"},
+      {"name": "Shivani Kumari", "branch": "MCA/3rd Sem", "roll": "MCA/25017/24"},
+      {"name": "Samradha Dube", "branch": "MCA/3rd Sem", "roll": "MCA/25005/24"},
+      {"name": "Mehak Jha", "branch": "BTECH-AI/5th Sem", "roll": "BTECH/25068/23"},
+      {"name": "Krishna Srivastava", "branch": "BTECH-CSE/5th Sem", "roll": "BTECH/25057/23"},
+      {"name": "Ananya Gupta", "branch": "BTECH-CSE/5th Sem", "roll": "BTECH/25018/23"},
+      {"name": "Shubham Chaudhary", "branch": "BTECH-AI/5th Sem", "roll": "BTECH/35001/23"},
+      {"name": "Agamjot Singh", "branch": "BTECH-CSE/3rd Sem", "roll": "BTECH/25007/24"},
+      {"name": "Vansh Nagar", "branch": "BCA/3rd Sem", "roll": "BCA/25022/24"},
+      {"name": "Shreyanshi Sharma", "branch": "BTECH-CSE/3rd Sem", "roll": "BTECH/25063/24"},
+      {"name": "Mohnish Agrawal", "branch": "BTECH-CSE/3rd Sem", "roll": "BTECH/25040/24"}
+    ]
+  },
+  {
+    "team": "Python Pioneers",
+    "mentor": "Gurminder Sir, Seema Mam & Archana mam",
+    "players": [
+      {"name": "Suchit Gupta", "branch": "CSE & 5th Sem", "roll": "BTECH/25128/23"},
+      {"name": "Nidhan Jain", "branch": "CSE & 3rd Sem", "roll": "BTECH/25127/24"},
+      {"name": "Vishist Gupta", "branch": "CSE & 3rd Sem", "roll": "BTECH/25142/24"},
+      {"name": "Gravit Saxena", "branch": "CSE & 3 Sem", "roll": "BTECH/25026/24"},
+      {"name": "Yashwardhan Singh", "branch": "CSE & 3rd Sem", "roll": "BTECH/25073/24"},
+      {"name": "Anisha Motwani", "branch": "BCA & 3rd Sem", "roll": "BCA/25001/24"},
+      {"name": "Sehar Nawaz Ali", "branch": "CSE & 5th Sem", "roll": "BTECH/25206/23"},
+      {"name": "Pratishtha Parnami", "branch": "CSE & 5th Sem", "roll": "BTECH/25186/23"},
+      {"name": "Sandali Saraswat", "branch": "MCA & 1 Sem", "roll": "MCA/25012/25"},
+      {"name": "Shruti Khandewal", "branch": "MCA & 1 Sem", "roll": "MCA/25015/25"},
+      {"name": "Karan Parwani", "branch": "MCA & 1 Sem", "roll": "MCA/25007/25"}
+    ]
+  }
+]

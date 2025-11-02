@@ -1,0 +1,596 @@
+[
+  {
+    "category": "B.Tech 4th Year / MCA 1st & 2nd Year / M.Sc.",
+    "count": 2,
+    "students": [
+      {
+        "name": "ANUJ SHARMA",
+        "roll_no": "MCA/25022/25",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★★★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 1
+      },
+      {
+        "name": "GOURAV MITTAL",
+        "roll_no": "BTECH/25040/22",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★",
+          "DSA": "★★★★★"
+        },
+        "s_no": 2
+      },
+      {
+        "name": "PIYUSH SINGH DHAKAD",
+        "roll_no": "MSCAI/25005/25",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★",
+          "JAVA": "★",
+          "DSA": "★★★"
+        },
+        "s_no": 3
+      },
+      {
+        "name": "SHIRISH PAREEK",
+        "roll_no": "MCA/25014/25",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★"
+        },
+        "s_no": 4
+      },
+      {
+        "name": "CHARUL CHOUDHARY",
+        "roll_no": "BTECH/25047/22",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★",
+          "C/C++": "★★★",
+          "JAVA": "★",
+          "DSA": "★★★"
+        },
+        "s_no": 5
+      },
+      {
+        "name": "YASHIKA SHARMA",
+        "roll_no": "MSCAI/25002/25",
+        "skills": {
+          "DBMS": "★★★★★",
+          "PYTHON": "★★★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 6
+      },
+      {
+        "name": "HEMANG BHABHRA",
+        "roll_no": "BTECH/25027/22",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★",
+          "C/C++": "★★★★★",
+          "JAVA": "★",
+          "DSA": "★★★"
+        },
+        "s_no": 7
+      },
+      {
+        "name": "NAINAV PANCHOLI",
+        "roll_no": "BTECH/25030/22",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★",
+          "C/C++": "★★★",
+          "JAVA": "★",
+          "DSA": "★★★"
+        },
+        "s_no": 8
+      },
+      {
+        "name": "KARAN PARWANI",
+        "roll_no": "MCA/25007/25",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★",
+          "JAVA": "★★",
+          "DSA": "★★"
+        },
+        "s_no": 9
+      },
+      {
+        "name": "VRINDA SINGHAL",
+        "roll_no": "BTECH/25017/22",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★★★"
+        },
+        "s_no": 10
+      },
+      {
+        "name": "TANMAY KHANDELWAL",
+        "roll_no": "BTECH/25019/22",
+        "skills": {
+          "DBMS": "★",
+          "PYTHON": "★",
+          "C/C++": "★",
+          "JAVA": "★",
+          "DSA": "★★"
+        },
+        "s_no": 11
+      },
+      {
+        "name": "ANOUSHKA PRAKASH",
+        "roll_no": "BTECH/25015/22",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★",
+          "C/C++": "★★",
+          "JAVA": "★★",
+          "DSA": "★★"
+        },
+        "s_no": 12
+      },
+      {
+        "name": "DHARNA GUNIDIA",
+        "roll_no": "BTECH/25028/22",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★"
+        },
+        "s_no": 13
+      },
+      {
+        "name": "SHRUTI KHANDELWAL",
+        "roll_no": "MCA/25015/25",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★"
+        },
+        "s_no": 14
+      }
+    ]
+  },
+  {
+    "category": "B.Tech 3rd Year / BCA 3rd Year",
+    "count": 2,
+    "students": [
+      {
+        "name": "ADITYA GOYAL",
+        "roll_no": "BTECH/25153/23",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 15
+      },
+      {
+        "name": "AVIRAL SHARMA",
+        "roll_no": "BTECH/25150/23",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 16
+      },
+      {
+        "name": "MANISHA PARWANI",
+        "roll_no": "BTECH/25063/23",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 17
+      },
+      {
+        "name": "ANVESHA MITTAL",
+        "roll_no": "BTECH/25024/23",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 18
+      },
+      {
+        "name": "SAGAR AGARWAL",
+        "roll_no": "BTECH/25101/23",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★★★",
+          "DSA": "★★★★★"
+        },
+        "s_no": 19
+      },
+      {
+        "name": "KARISHMA JETHWANI",
+        "roll_no": "BTECH/25054/23",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★",
+          "JAVA": "★★★★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 20
+      },
+      {
+        "name": "MEHAK JHA",
+        "roll_no": "BTECH/25068/23",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★"
+        },
+        "s_no": 21
+      },
+      {
+        "name": "ABHINAV GUPTA",
+        "roll_no": "BTECH/25006/23",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★",
+          "JAVA": "★",
+          "DSA": "★★"
+        },
+        "s_no": 22
+      },
+      {
+        "name": "SANCHIT PAWA",
+        "roll_no": "BTECH/25105/23",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 23
+      },
+      {
+        "name": "MRIDUL KRISHNA SHARMA",
+        "roll_no": "BTECH/25073/23",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 24
+      },
+      {
+        "name": "KRISHNA SRIVASTAVA",
+        "roll_no": "BTECH/25057/23",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★"
+        },
+        "s_no": 25
+      },
+      {
+        "name": "YUVAN KHADOLIA",
+        "roll_no": "BTECH/25169/23",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★",
+          "C/C++": "★★★★",
+          "JAVA": "★",
+          "DSA": "★★★"
+        },
+        "s_no": 26
+      },
+      {
+        "name": "YASHOWARDHAN SINGH WAGHELA",
+        "roll_no": "BTECH/25146/23",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★★★★",
+          "DSA": "★★★"
+        },
+        "s_no": 27
+      },
+      {
+        "name": "SEHAR NAWAZ ALI",
+        "roll_no": "BTECH/25206/23",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★",
+          "DSA": "★★"
+        },
+        "s_no": 28
+      },
+      {
+        "name": "MEHUL SHARMA",
+        "roll_no": "BTECH/25069/23",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★",
+          "C/C++": "★★★",
+          "JAVA": "★★",
+          "DSA": "★★★"
+        },
+        "s_no": 29
+      },
+      {
+        "name": "CHARCHIT JAIN",
+        "roll_no": "BTECH/25158/23",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 30
+      },
+      {
+        "name": "DHRUVIKA KHANDELWAL",
+        "roll_no": "BTECH/25037/23",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 31
+      },
+      {
+        "name": "VANSH JAIN",
+        "roll_no": "BTECH/25135/23",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★★"
+        },
+        "s_no": 32
+      },
+      {
+        "name": "SUCHIT GUPTA",
+        "roll_no": "BTECH/25128/23",
+        "skills": {
+          "DBMS": "★",
+          "PYTHON": "★",
+          "C/C++": "★★★★",
+          "JAVA": "★★★★",
+          "DSA": "★★"
+        },
+        "s_no": 33
+      }
+    ]
+  },
+  {
+    "category": "B.Tech 2nd Year / BCA 2nd Year",
+    "count": 2,
+    "students": [
+      {
+        "name": "HARSHIT KUSHWAHA",
+        "roll_no": "BTECH/25178/24",
+        "skills": {
+          "DBMS": "★",
+          "PYTHON": "★",
+          "C/C++": "★★★★",
+          "JAVA": "★",
+          "DSA": "★★"
+        },
+        "s_no": 34
+      },
+      {
+        "name": "ANSH RAJ",
+        "roll_no": "BTECH/25079/24",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★",
+          "JAVA": "★",
+          "DSA": "★★"
+        },
+        "s_no": 35
+      },
+      {
+        "name": "YASHVARDHAN THANVI",
+        "roll_no": "BCA/25024/24",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★",
+          "DSA": "★★"
+        },
+        "s_no": 36
+      },
+      {
+        "name": "ANISHA MOTWANI",
+        "roll_no": "BCA/25001/24",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★"
+        },
+        "s_no": 37
+      },
+      {
+        "name": "GARVIT SAXENA",
+        "roll_no": "BTECH/25026/24",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★★",
+          "JAVA": "★",
+          "DSA": "★★★★★"
+        },
+        "s_no": 38
+      },
+      {
+        "name": "NISCHAL AGRAWAL",
+        "roll_no": "BTECH/25041/24",
+        "skills": {
+          "DBMS": "★★",
+          "PYTHON": "★★",
+          "C/C++": "★★★",
+          "JAVA": "★",
+          "DSA": "★"
+        },
+        "s_no": 39
+      },
+      {
+        "name": "DEVESH JAIN",
+        "roll_no": "BCA/25004/24",
+        "skills": {
+          "DBMS": "★★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★★",
+          "JAVA": "★",
+          "DSA": "★★★★"
+        },
+        "s_no": 40
+      },
+      {
+        "name": "SHAIKH FAHAD",
+        "roll_no": "BTECH/25218/24",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★"
+        },
+        "s_no": 41
+      },
+      {
+        "name": "VANSH NAGAR",
+        "roll_no": "BCA/25022/24",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★",
+          "DSA": "★★"
+        },
+        "s_no": 42
+      },
+      {
+        "name": "DURGESH SAINI",
+        "roll_no": "BCA/25008/24",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★"
+        },
+        "s_no": 43
+      },
+      {
+        "name": "GAURANSHI MAHAWAR",
+        "roll_no": "BCA/25009/24",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★★★★"
+        },
+        "s_no": 44
+      },
+      {
+        "name": "MUSKAN JAIN",
+        "roll_no": "BCA/25014/24",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★★",
+          "C/C++": "★★★",
+          "JAVA": "★★★",
+          "DSA": "★★"
+        },
+        "s_no": 45
+      },
+      {
+        "name": "DISHA KODASIA",
+        "roll_no": "BCA/25006/24",
+        "skills": {
+          "DBMS": "★★★",
+          "PYTHON": "★",
+          "C/C++": "★★★",
+          "JAVA": "★★★★",
+          "DSA": "★★★"
+        },
+        "s_no": 46
+      },
+      {
+        "name": "VAIBHAV",
+        "roll_no": "BTECH/25067/24",
+        "skills": {
+          "DBMS": "★",
+          "PYTHON": "★★",
+          "C/C++": "★★★★",
+          "JAVA": "★",
+          "DSA": "★★★★"
+        },
+        "s_no": 47
+      },
+      {
+        "name": "SHIVIN AGRAWAL",
+        "roll_no": "BTECH/25061/24",
+        "skills": {
+          "DBMS": "★",
+          "PYTHON": "★★",
+          "C/C++": "★★★★★",
+          "JAVA": "★",
+          "DSA": "★★★★★"
+        },
+        "s_no": 48
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auction | Battle of Bytes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <!-- ✅ Favicon -->
+   <link rel="icon" type="image/jpeg/png" href="images/favicon.JPG">
+</head>
+
+<body class="bg-[#0b1120] text-white font-sans">
+  <!-- Navbar -->
+  <div class="navbar bg-[#111827]/90 border-b border-cyan-400/30 shadow-lg"></div>
+
+  <!-- Purse Board -->
+  <section class="max-w-6xl mx-auto mt-24 mb-10 bg-[#111827]/70 backdrop-blur p-6 rounded-2xl border border-cyan-400/30 shadow-cyan-500/10 shadow-lg">
+    <h2 class="text-2xl font-bold text-cyan-400 mb-6 text-center">💰 Current Team Purses</h2>
+    <div id="purseBoard" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-sm"></div>
+  </section>
+
+  <!-- Auction Section -->
+  <main class="max-w-7xl mx-auto px-6 pb-16">
+    <h1 class="text-4xl font-extrabold text-cyan-400 mb-6 text-center drop-shadow">⚔️ Live Auction Arena</h1>
+    <div id="timer" class="text-center text-lg mb-8 font-semibold text-violet-300"></div>
+
+    <div id="auctionArea" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-400 border-t border-white/10 mt-8">
+    Auction | Battle of Bytes
+  </footer>
+
+  <!-- Toast container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script>
+    // ✅ Ensure only logged-in users can access auction
+    document.addEventListener("DOMContentLoaded", () => {
+      const loggedUser = localStorage.getItem("loggedUser");
+      if (!loggedUser) {
+        alert("⚠️ Please login first to access the auction.");
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

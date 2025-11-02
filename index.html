@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Login | Battle of Bytes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- ✅ Favicon -->
+    <link rel="icon" type="image/jpeg/png" href="images/favicon.JPG">
+  <style>
+    .bg-rad { background: radial-gradient( circle at 10% 20%, rgba(6,182,212,0.06), transparent 10%),
+      radial-gradient(circle at 90% 80%, rgba(124,58,237,0.05), transparent 8%); }
+  </style>
+  
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#05060a] to-[#0b1120]">
+  <div class="max-w-md w-full p-8 card bg-rad">
+    <h1 class="text-3xl font-extrabold text-cyan-400 text-center">⚔️ Battle of Bytes</h1>
+    <p class="subtle text-center mt-2">Team Login Portal</p>
+
+    <form id="loginForm" class="mt-6 space-y-4">
+      <div>
+        <label class="text-sm subtle">Username (team short)</label>
+        <input id="username" class="input-box" placeholder="e.g. cc (codecommanders)"/>
+      </div>
+      <div>
+        <label class="text-sm subtle">Password (mentor first name)</label>
+        <input id="password" class="input-box" type="password" placeholder="e.g. puneet"/>
+      </div>
+
+      <button type="submit" class="btn-accent">Login</button>
+      <button type="button" id="guestBtn" class="btn-outline">Enter as Guest</button>
+      <div id="error" class="text-sm text-red-400 mt-2"></div>
+    </form>
+  </div>
+
+  <script>
+    const validTeams = {
+      "cc": "puneet",
+      "dm": "biplendu",
+      "ll": "vishambhar",
+      "qc": "pankaj",
+      "rr": "santosh",
+      "pp": "seema",
+      "jj": "santosh",
+      "ss": "vivek",
+      "bb": "anju"
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', e=>{
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim().toLowerCase().replace(/\s/g,'');
+      const pass = document.getElementById('password').value.trim().toLowerCase();
+      const err = document.getElementById('error');
+
+      if (validTeams[user] && validTeams[user] === pass) {
+        localStorage.setItem('loggedUser', user);
+        location.href = 'home.html';
+      } else { err.textContent = '❌ Invalid credentials — try again or enter as guest.'; }
+    });
+
+    document.getElementById('guestBtn').addEventListener('click', ()=>{
+      localStorage.setItem('loggedUser','guest'); location.href='home.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Details - Battle of Bytes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <!-- ✅ Favicon -->
+    <link rel="icon" type="image/jpeg/png" href="images/favicon.JPG">
+</head>
+
+<body class="bg-[#0b1120] text-white">
+  <nav class="navbar"></nav>
+
+  <main class="max-w-6xl mx-auto px-6 pt-24">
+    <h2 id="teamName" class="text-3xl font-bold text-cyan-400 mb-2 text-center"></h2>
+    <p id="teamMentor" class="text-gray-400 text-center mb-10"></p>
+
+    <div id="playersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-400 border-t border-white/10 mt-8">
+    Battle of Bytes | Team Members
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const params = new URLSearchParams(window.location.search);
+      const teamName = params.get("team");
+      if (!teamName) return;
+
+      const res = await fetch("teamsData.json");
+      const data = await res.json();
+      const team = data.find(t => t.team === teamName);
+
+      if (!team) return (document.body.innerHTML = "<h2 class='text-center text-red-400 mt-20'>Team not found!</h2>");
+
+      document.getElementById("teamName").textContent = team.team;
+      document.getElementById("teamMentor").textContent = "Mentor: " + team.mentor;
+
+      const grid = document.getElementById("playersGrid");
+      grid.innerHTML = team.players.map(p => `
+        <div class="bg-gray-800/50 p-5 rounded-xl border border-white/10">
+          <h3 class="text-lg font-semibold text-cyan-300">${p.name}</h3>
+          <p class="text-sm text-gray-400">${p.branch}</p>
+          <p class="text-sm text-gray-500">${p.roll}</p>
+        </div>
+      `).join("");
+    });
+  </script>
+</body>
+</html>
