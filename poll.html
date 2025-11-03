@@ -6,22 +6,24 @@
   <title>Live Poll | Battle of Bytes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css"/>
-  <!-- ✅ Favicon -->
-    <link rel="icon" type="image/jpeg/png" href="images/favicon.JPG">
+  <link rel="icon" type="image/png" href="images/favicon.png.jpeg" />
 </head>
 
 <body class="min-h-screen text-white bg-gradient-to-b from-[#05060a] to-[#0b1120] font-sans">
 
-  <!-- 🧭 Navbar (Dynamic) -->
+  <!-- 🧭 Navbar -->
   <div class="navbar"></div>
 
   <!-- ⚡ Poll Section -->
   <main class="pt-28 max-w-4xl mx-auto px-4">
     <section class="bg-[#111827]/70 border border-cyan-400/20 rounded-2xl shadow-lg p-8 backdrop-blur-sm">
       <h1 class="text-3xl font-bold text-cyan-400 mb-3 text-center">⚡ Live Team Poll</h1>
-      <p class="text-gray-400 text-center mb-8 text-sm">
-        Vote for your favourite team — one vote per login every 24 hrs. Poll resets periodically.
+      <p class="text-gray-400 text-center mb-6 text-sm">
+        Vote for your favourite team — one vote per login per day. Poll resets every midnight.
       </p>
+
+      <!-- 🕒 Countdown to Midnight -->
+      <div id="resetCountdown" class="text-center text-yellow-400 font-semibold mb-6 text-sm"></div>
 
       <div id="pollArea" class="mt-6"></div>
       <div id="voteTimer" class="mt-6 text-center text-sm text-gray-400"></div>
@@ -33,7 +35,7 @@
     © 2025 Battle of Bytes — Live Poll
   </footer>
 
-  <!-- ✅ Load Navbar Script -->
+  <!-- ✅ Navbar Script -->
   <script src="script.js"></script>
 
   <!-- 🗳️ Poll Script -->
@@ -45,38 +47,118 @@
         "Byte Busters", "Ruby Renegades", "Python Pioneers", "Java Jesters",
         "Code Commanders", "Syntax Samurai", "Data Mavericks", "Quantum Coders", "Logic Luminaries"
       ];
+
       const area = document.getElementById('pollArea');
       const timerDisplay = document.getElementById('voteTimer');
-      const resetTime = 86400000;// 60s
-      let votes = JSON.parse(localStorage.getItem('votes')) || { total: 0, data: {} };
-      const now = Date.now();
+      const resetCountdown = document.getElementById('resetCountdown');
 
-      if (!localStorage.getItem("lastReset") || now - localStorage.getItem("lastReset") > resetTime) {
-        votes = { total: 0, data: {} };
-        localStorage.setItem('votes', JSON.stringify(votes));
-        localStorage.setItem('lastReset', now);
+      const VOTES_KEY = 'votes';
+      const LAST_RESET_KEY = 'lastResetDate';
+      const loggedUser = (localStorage.getItem('loggedUser') || 'guest').toString();
+      const userKey = sanitizeUserKey(loggedUser);
+
+      ensureVotesInitialized();
+      render();
+      updateVoteTimer();
+      updateResetCountdown();
+      setInterval(checkMidnightReset, 60 * 1000); // check every minute
+
+      function sanitizeUserKey(s) {
+        return String(s).trim().toLowerCase().replace(/\s+/g, '_') || 'guest';
       }
 
-      teams.forEach(t => { if (!votes.data[t]) votes.data[t] = 0; });
+      function getTodayDateString() {
+        const d = new Date();
+        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+      }
+
+      function getVotes() {
+        const raw = localStorage.getItem(VOTES_KEY);
+        if (!raw) {
+          const base = { total: 0, data: {} };
+          teams.forEach(t => base.data[t] = 0);
+          localStorage.setItem(VOTES_KEY, JSON.stringify(base));
+          return base;
+        }
+        try {
+          const parsed = JSON.parse(raw);
+          if (!parsed.data) parsed.data = {};
+          teams.forEach(t => { if (typeof parsed.data[t] !== 'number') parsed.data[t] = 0; });
+          parsed.total = Object.values(parsed.data).reduce((a,b)=>a+(Number(b)||0), 0);
+          return parsed;
+        } catch {
+          const base = { total: 0, data: {} };
+          teams.forEach(t => base.data[t] = 0);
+          localStorage.setItem(VOTES_KEY, JSON.stringify(base));
+          return base;
+        }
+      }
+
+      function setVotes(v) {
+        v.total = Object.values(v.data).reduce((a,b)=>a+(Number(b)||0), 0);
+        localStorage.setItem(VOTES_KEY, JSON.stringify(v));
+      }
+
+      function ensureVotesInitialized() {
+        const today = getTodayDateString();
+        const lastReset = localStorage.getItem(LAST_RESET_KEY);
+        if (lastReset !== today) {
+          const base = { total: 0, data: {} };
+          teams.forEach(t => base.data[t] = 0);
+          localStorage.setItem(VOTES_KEY, JSON.stringify(base));
+          localStorage.setItem(LAST_RESET_KEY, today);
+          localStorage.removeItem(`lastVote_${userKey}`);
+        } else {
+          const v = getVotes();
+          setVotes(v);
+        }
+      }
+
+      function checkMidnightReset() {
+        const now = new Date();
+        if (now.getHours() === 0 && now.getMinutes() === 0) {
+          ensureVotesInitialized();
+          render();
+        }
+      }
+
+      function lastVoteKeyFor(userKey) {
+        return `lastVote_${userKey}`;
+      }
+
+      function userCanVote() {
+        const lastVoteDate = localStorage.getItem(lastVoteKeyFor(userKey));
+        const today = getTodayDateString();
+        return lastVoteDate !== today;
+      }
+
+      function recordVoteFor(teamName) {
+        const votes = getVotes();
+        votes.data[teamName] = (votes.data[teamName] || 0) + 1;
+        setVotes(votes);
+        const today = getTodayDateString();
+        localStorage.setItem(lastVoteKeyFor(userKey), today);
+      }
 
       function render() {
-        const sorted = Object.entries(votes.data).sort((a, b) => b[1] - a[1]);
+        const votes = getVotes();
+        const sorted = Object.entries(votes.data).sort((a,b) => b[1] - a[1]);
         area.innerHTML = '';
 
         sorted.forEach(([team, count]) => {
           const pct = votes.total ? Math.round((count / votes.total) * 100) : 0;
-          area.innerHTML += `
-            <div class="mb-5">
-              <div class="flex justify-between text-sm font-semibold mb-1">
-                <span>${team}</span><span>${count} votes (${pct}%)</span>
-              </div>
-              <div class="w-full bg-white/10 h-3 rounded-full">
-                <div style="width:${pct}%" class="h-3 rounded-full bg-gradient-to-r from-cyan-400 to-violet-600"></div>
-              </div>
+          const wrapper = document.createElement('div');
+          wrapper.className = 'mb-5';
+          wrapper.innerHTML = `
+            <div class="flex justify-between text-sm font-semibold mb-1">
+              <span>${team}</span><span>${count} votes (${pct}%)</span>
+            </div>
+            <div class="w-full bg-white/10 h-3 rounded-full">
+              <div style="width:${pct}%" class="h-3 rounded-full bg-gradient-to-r from-cyan-400 to-violet-600"></div>
             </div>`;
+          area.appendChild(wrapper);
         });
 
-        // --- Controls ---
         const controls = document.createElement('div');
         controls.className = 'mt-6 flex flex-col sm:flex-row items-center justify-center gap-3';
 
@@ -93,19 +175,20 @@
         btn.className = 'px-6 py-2 bg-gradient-to-r from-cyan-400 to-violet-600 text-black font-semibold rounded-lg hover:scale-105 transition-transform';
         btn.textContent = 'Vote';
 
+        if (!userCanVote()) {
+          btn.disabled = true;
+          btn.classList.add('opacity-60', 'cursor-not-allowed');
+        }
+
         btn.onclick = () => {
-          const lastVote = parseInt(localStorage.getItem('lastVoteTime')) || 0;
-          const diff = Date.now() - lastVote;
-          if (diff < resetTime) {
-            alert(`Please wait ${Math.ceil((resetTime - diff) / 1000)}s before voting again.`);
+          if (!userCanVote()) {
+            alert(`You have already voted today. Please wait until midnight to vote again.`);
             return;
           }
           const selVal = sel.value;
-          votes.data[selVal]++;
-          votes.total++;
-          localStorage.setItem('votes', JSON.stringify(votes));
-          localStorage.setItem('lastVoteTime', Date.now());
+          recordVoteFor(selVal);
           render();
+          updateVoteTimer();
         };
 
         controls.appendChild(sel);
@@ -114,21 +197,26 @@
       }
 
       function updateVoteTimer() {
-        const last = parseInt(localStorage.getItem('lastVoteTime')) || 0;
-        const diff = Date.now() - last;
-        const rem = resetTime - diff;
-        if (rem > 0) {
-          timerDisplay.textContent = `🕒 You can vote again in ${Math.ceil(rem / 1000)}s`;
-          setTimeout(updateVoteTimer, 1000);
-        } else {
+        if (userCanVote()) {
           timerDisplay.textContent = '✅ You can vote now!';
+          return;
         }
+        timerDisplay.textContent = '🕒 You have already voted today. Wait until midnight.';
       }
 
-      render();
-      updateVoteTimer();
+      function updateResetCountdown() {
+        const now = new Date();
+        const nextMidnight = new Date(now);
+        nextMidnight.setHours(24, 0, 0, 0);
+        const diff = nextMidnight - now;
+
+        const h = Math.floor(diff / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        resetCountdown.textContent = `⏳ Poll resets at midnight — ${h}h ${m}m ${s}s remaining`;
+        setTimeout(updateResetCountdown, 1000);
+      }
     }
   </script>
-
 </body>
 </html>

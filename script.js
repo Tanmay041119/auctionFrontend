@@ -1,20 +1,78 @@
 document.addEventListener("DOMContentLoaded", async () => {
   // ✅ Navbar (shared for all pages)
+  const loggedUser = localStorage.getItem("loggedUser");
   const navHTML = `
   <div class='max-w-6xl mx-auto flex justify-between items-center p-4'>
     <a href='home.html' class='text-xl font-bold text-cyan-400'>⚔️ Battle of Bytes</a>
-    <div class='space-x-5 text-sm'>
+    <div class='space-x-5 text-sm flex items-center'>
       <a href='auction.html' class='hover:text-cyan-400'>Auction</a>
       <a href='poll.html' class='hover:text-cyan-400'>Poll</a>
       <a href='teams.html' class='hover:text-cyan-400'>Teams</a>
       <a href='coordinators.html' class='hover:text-cyan-400'>Coordinators</a>
       <a href='contact.html' class='hover:text-cyan-400'>Contact</a>
+      ${
+        loggedUser
+          ? `<button onclick="handleLogout()" class="ml-4 px-3 py-1 text-xs rounded bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
+               ${loggedUser === "guest" ? "Exit Guest" : "Logout"}
+             </button>`
+          : `<a href="index.html" class="ml-4 px-3 py-1 text-xs rounded bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
+               Login
+             </a>`
+      }
     </div>
   </div>`;
   document.querySelector(".navbar").innerHTML = navHTML;
 
+  // ✅ Toast container (added globally just below navbar)
+  if (!document.getElementById("toast-container")) {
+    const toastContainer = document.createElement("div");
+    toastContainer.id = "toast-container";
+    toastContainer.className =
+      "fixed top-20 left-1/2 transform -translate-x-1/2 z-[9999] flex flex-col items-center space-y-2";
+    document.body.appendChild(toastContainer);
+  }
+
   if (document.getElementById("auctionArea")) initAuction();
 });
+
+// ------------------------------------------
+// Toast Helper
+// ------------------------------------------
+function showToast(message) {
+  const container = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+
+  toast.className =
+    "bg-cyan-500 text-black px-4 py-2 rounded-lg shadow-lg text-sm font-semibold animate-fadeIn";
+
+  toast.textContent = message;
+  container.appendChild(toast);
+
+  // Auto fade & remove
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateY(-10px)";
+  }, 2000);
+
+  setTimeout(() => toast.remove(), 2600);
+}
+
+// ------------------------------------------
+// Logout / Exit Guest Handler
+// ------------------------------------------
+window.handleLogout = function () {
+  const loggedUser = localStorage.getItem("loggedUser");
+
+  if (loggedUser === "guest") {
+    localStorage.removeItem("loggedUser");
+    showToast("👋 Exited Guest Mode");
+  } else {
+    localStorage.removeItem("loggedUser");
+    showToast("🚪 Logged out successfully");
+  }
+
+  setTimeout(() => (window.location.href = "index.html"), 1500);
+};
 
 // ------------------------------------------
 // Auction Logic
@@ -35,7 +93,7 @@ async function initAuction() {
     "Data Mavericks",
     "Quantum Coders",
     "Logic Luminaries",
-    "Python Pioneers"
+    "Python Pioneers",
   ];
 
   // Load players
@@ -43,8 +101,8 @@ async function initAuction() {
   const data = await res.json();
 
   let players = [];
-  data.forEach(cat => {
-    cat.students.forEach(st => {
+  data.forEach((cat) => {
+    cat.students.forEach((st) => {
       players.push({
         s_no: st.s_no,
         name: st.name,
@@ -52,7 +110,7 @@ async function initAuction() {
         category: cat.category,
         skills: st.skills,
         current: 0,
-        bidder: "—"
+        bidder: "—",
       });
     });
   });
@@ -86,7 +144,8 @@ async function initAuction() {
           ? `<div class='flex justify-between text-xs text-gray-300'>
                <span>${s}</span><span class='text-yellow-400'>${v}</span>
              </div>`
-          : "")
+          : ""
+      )
       .join("");
   }
 
@@ -106,27 +165,6 @@ async function initAuction() {
     } catch {
       return 0;
     }
-  }
-
-  // ---------- TOAST FUNCTION ----------
-  function showToast(message) {
-    const container = document.getElementById("toast-container");
-    const toast = document.createElement("div");
-    toast.className = "toast";
-
-    // format backend message nicely
-    toast.innerHTML = message.replace(
-      /^([^—]+)— current highest bid by (.+) at ₹(\d+)/,
-      "<strong>$1</strong> — current highest bid by <span style='color:#22d3ee;'>$2</span> at ₹$3"
-    );
-
-    container.appendChild(toast);
-
-    // auto-hide after 4s
-    setTimeout(() => {
-      toast.style.animation = "fadeOut 0.5s ease forwards";
-      setTimeout(() => toast.remove(), 500);
-    }, 4000);
   }
 
   // ---------- RENDER PLAYERS ----------
@@ -160,10 +198,10 @@ async function initAuction() {
       </div>`;
     }
 
-    // ✅ Disable all bid buttons if user is guest
+    // ✅ Disable only bid buttons for guests
     const loggedUser = localStorage.getItem("loggedUser");
     if (loggedUser === "guest") {
-      document.querySelectorAll("button").forEach(btn => {
+      document.querySelectorAll("#auctionArea button").forEach((btn) => {
         btn.disabled = true;
         btn.classList.add("opacity-50", "cursor-not-allowed");
       });
